@@ -1,0 +1,34 @@
+/* Site-wide styles */
+* {
+  -webkit-box-sizing: border-box;
+  -mox-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  /* border: red solid 1px; */
+}
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: black;
+  background: white;
+  min-width: 280px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Anton', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #6699cc; /* logo blue */
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  text-shadow: none;
+}
+a:hover, a:focus, a:active {
+  color: #ff3399; /* logo pink */
+}
+
+
+/* Template-specific styles */
+
+
+
+/* Mobile styling */
