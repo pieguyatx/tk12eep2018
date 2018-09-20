@@ -1,3 +1,6 @@
 *.log
 
 web.config
+
+img/episodes/
+img/episodes/*
