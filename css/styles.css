@@ -1,4 +1,10 @@
 /* === Site-wide styles === */
+:root {
+  --branding-blue: rgb(79,169,255); /* logo blue */
+  --branding-pink: rgb(255,41,152); /* logo pink */
+  --color-dark-blue: #6699cc; /* duller blue */
+  --color-dark-pink: #ff3399; /* duller pink */
+}
 * {
   -webkit-box-sizing: border-box;
   -mox-box-sizing: border-box;
@@ -11,6 +17,7 @@ body {
   color: black;
   background: white;
   min-width: 280px;
+  margin: 0;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Anton', sans-serif;
@@ -27,6 +34,27 @@ a:hover, a:focus, a:active {
 }
 
 /* Header Branding */
+header .branding {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background: #000;
+}
+header .branding h1 {
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+header .branding .logo-text {
+  display: inline-block;
+}
+header .branding .logo-text .logo-k {
+  color: var(--branding-blue);
+}
+header .branding .logo-text .logo-12 {
+  color: var(--branding-pink);
+}
+
 
 /* Header Primary Nav */
 
