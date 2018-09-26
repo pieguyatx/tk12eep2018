@@ -55,15 +55,80 @@ header .branding .logo-text .logo-12 {
   color: var(--branding-pink);
 }
 
-
-/* Header Primary Nav */
-
-/* Header Secondary Nav */
+/* Header Navs */
+header nav > ul {
+  padding: 0;
+  margin: 0;
+}
+header nav > ul > li {
+  font-family: 'Anton', sans-serif;
+  font-size: 2em;
+  color: #fff;
+  padding: 0.5em 1em;
+}
+header nav > ul > li .submenu {
+  font-family: 'PT Sans', sans-serif;
+}
+/* Header Nav: About */
+header nav .nav-about{
+  background: var(--color-dark-blue);
+}
+/* Header Nav: Listen */
+header nav .nav-listen {
+  background: var(--color-dark-pink);
+}
 
 /* Main Content */
+.episode-container,
+.episode-primary,
+.episode-img-container {
+  padding: 0.5em;
+}
+.episode-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.episode-primary, .episodes-other {
+  width: 50%;
+}
+.episode-primary iframe {
+  height: auto;
+  min-height: 500px;
+}
+.episodes-other > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.episodes-other > div .episode-img-container {
+  width: 50%;
+}
+.episodes-other > div .episode-img-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Footer */
-
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em;
+}
+footer nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 77rem;
+  margin: auto;
+}
+footer nav ul li {
+  margin: 0 3em;
+}
 
 /* ===Template-specific styles === */
 
