@@ -1,4 +1,4 @@
-/* Site-wide styles */
+/* === Site-wide styles === */
 * {
   -webkit-box-sizing: border-box;
   -mox-box-sizing: border-box;
@@ -26,8 +26,18 @@ a:hover, a:focus, a:active {
   color: #ff3399; /* logo pink */
 }
 
+/* Header Branding */
 
-/* Template-specific styles */
+/* Header Primary Nav */
+
+/* Header Secondary Nav */
+
+/* Main Content */
+
+/* Footer */
+
+
+/* ===Template-specific styles === */
 
 
 
