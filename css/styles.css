@@ -4,6 +4,8 @@
   --branding-pink: rgb(255,41,152); /* logo pink */
   --color-dark-blue: #6699cc; /* duller blue */
   --color-dark-pink: #ff3399; /* duller pink */
+  --color-light-blue: hsl(209, 100%, 95%); /* light blue */
+  --color-light-pink: hsl(329, 100%, 95%); /* light pink */
 }
 * {
   -webkit-box-sizing: border-box;
@@ -37,16 +39,19 @@ a:hover, a:focus, a:active {
 header .branding {
   text-transform: uppercase;
   text-align: center;
-  color: #fff;
   background: #000;
+  line-height: 1.8em;
+  padding: 1em;
 }
 header .branding h1 {
   margin: 0;
   font-weight: normal;
   letter-spacing: 2px;
+  color: #fff;
 }
 header .branding .logo-text {
   display: inline-block;
+  transition: all 0.7s;
 }
 header .branding .logo-text .logo-k {
   color: var(--branding-blue);
@@ -54,10 +59,20 @@ header .branding .logo-text .logo-k {
 header .branding .logo-text .logo-12 {
   color: var(--branding-pink);
 }
-
+header .branding:hover .logo-text .logo-k,
+header .branding:focus .logo-text .logo-k {
+  color: var(--branding-pink);
+  font-weight: bold;
+}
+header .branding:hover .logo-text .logo-12,
+header .branding:focus .logo-text .logo-12 {
+  color: var(--branding-blue);
+  font-weight: bold;
+}
 /* Header Navs */
 header nav {
   overflow: hidden;
+  transition: height 0.7s;
 }
 header nav > ul {
   padding: 0;
@@ -67,23 +82,23 @@ header nav > ul {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  justify-content: space-between;
+  background: var(--color-dark-blue);
 }
 header nav > ul > li {
   padding: 0.5em 1em;
   width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: block;
 }
 header nav > ul > li .submenu {
   font-family: 'PT Sans', sans-serif;
   font-size: 1em;
   color: #fff;
   height: 0;
+  opacity: 0;
   overflow: hidden;
-  -webkit-transition: height 0.3s;
-  transition: height 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .nav-main-item,
 .nav-main-item .nav-main-item-icon {
@@ -104,10 +119,20 @@ header nav > ul > li .submenu {
   margin: auto;
   background: none;
   border: none;
+  cursor: pointer;
+  transition: all 0.7s;
 }
 .nav-main-item i {
   margin: 0 0.5em;
 }
+.nav-main-item:hover,
+.nav-main-item:focus {
+  text-shadow: var(--color-light-blue) 0px 0px 10px;
+}
+.nav-main-item:active {
+  color: var(--color-light-pink);
+}
+
 /* Header Nav: About */
 header nav .nav-about {
   background: var(--color-dark-blue);
@@ -126,28 +151,48 @@ header nav .nav-listen .submenu{
           flex-direction: row;
 }
 /* Header Nav interactivity */
+header nav .nav-item-container {
+  position: relative;
+}
 header nav .nav-item-container,
 .nav-main-item-title,
 .nav-main-item-icon {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  align-items: flex-start;
 }
-header nav .nav-item-container:hover .submenu {
-  height: 10em;
-  max-height: 50vh;
+header nav:hover .nav-item-container,
+header nav:focus .nav-item-container {
+  height: 200px;
+}
+header nav .nav-item-container:hover .submenu,
+header nav .nav-item-container:focus .submenu  {
+  opacity: 1;
+  height: 150px;
 }
 header nav .nav-item-active {
   width: 90%;
+  z-index: 2;
+}
+header nav .nav-item-active .nav-main-item {
+  width: 80%;
+  max-width: 300px;
 }
 header nav .nav-item-minimized {
-  width: 10%;
+  width: auto;
+  min-width: 100px;
+  max-width: 20%;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
 }
 header nav .nav-item-minimized .nav-main-item-title {
   opacity: 0;
   width: 0;
 }
-header nav .nav-item-minimized .nav-main-item-icon {
+header nav .nav-item-minimized .nav-main-item-icon i {
   font-size: 2em;
+  margin: 0.1em;
 }
 
 /* Main Content */
