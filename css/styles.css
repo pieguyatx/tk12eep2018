@@ -83,7 +83,6 @@ header nav > ul {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  background: var(--color-dark-blue);
 }
 header nav > ul > li {
   padding: 0.5em 1em;
@@ -95,10 +94,11 @@ header nav > ul > li .submenu {
   font-size: 1em;
   color: #fff;
   height: 0;
+  width: 0;
   opacity: 0;
   overflow: hidden;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .nav-main-item,
 .nav-main-item .nav-main-item-icon {
@@ -116,7 +116,7 @@ header nav > ul > li .submenu {
   font-family: 'Anton', sans-serif;
   font-size: 2em;
   color: #fff;
-  margin: auto;
+  margin: 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -132,59 +132,53 @@ header nav > ul > li .submenu {
 .nav-main-item:active {
   color: var(--color-light-pink);
 }
-
-/* Header Nav: About */
-header nav .nav-about {
-  background: var(--color-dark-blue);
+header nav .nav-item-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
 }
+
 /* Header Nav: Listen */
 header nav .nav-listen {
   background: var(--color-dark-pink);
+  flex-direction: row;
 }
-header nav .nav-listen .submenu{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+/* Header Nav: About */
+header nav .nav-about {
+  background: var(--color-dark-blue);
+  flex-direction: row-reverse;
 }
+
 /* Header Nav interactivity */
-header nav .nav-item-container {
-  position: relative;
-}
 header nav .nav-item-container,
 .nav-main-item-title,
 .nav-main-item-icon {
   -webkit-transition: all 0.7s;
   transition: all 0.7s;
-  align-items: flex-start;
 }
 header nav:hover .nav-item-container,
 header nav:focus .nav-item-container {
   height: 200px;
 }
+header nav .nav-item-container:hover .nav-main-item,
+header nav .nav-item-container:focus .nav-main-item {
+  /* align-self: flex-start; */
+}
 header nav .nav-item-container:hover .submenu,
 header nav .nav-item-container:focus .submenu  {
   opacity: 1;
   height: 150px;
+  width: auto;
 }
 header nav .nav-item-active {
   width: 90%;
   z-index: 2;
 }
-header nav .nav-item-active .nav-main-item {
-  width: 80%;
-  max-width: 300px;
-}
 header nav .nav-item-minimized {
-  width: auto;
+  width: 10%;
   min-width: 100px;
-  max-width: 20%;
-  z-index: 0;
-  display: flex;
-  flex-direction: column;
 }
 header nav .nav-item-minimized .nav-main-item-title {
   opacity: 0;
