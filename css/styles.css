@@ -51,6 +51,7 @@ header .branding h1 {
 }
 header .branding .logo-text {
   display: inline-block;
+  -webkit-transition: all 0.7s;
   transition: all 0.7s;
 }
 header .branding .logo-text .logo-k {
@@ -72,6 +73,7 @@ header .branding:focus .logo-text .logo-12 {
 /* Header Navs */
 header nav {
   overflow: hidden;
+  -webkit-transition: height 0.7s;
   transition: height 0.7s;
 }
 header nav > ul {
@@ -82,7 +84,10 @@ header nav > ul {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: var(--color-dark-blue);
 }
 header nav > ul > li {
   padding: 0.5em 1em;
@@ -96,9 +101,14 @@ header nav > ul > li .submenu {
   height: 0;
   width: 0;
   opacity: 0;
-  overflow: hidden;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .nav-main-item,
 .nav-main-item .nav-main-item-icon {
@@ -120,6 +130,7 @@ header nav > ul > li .submenu {
   background: none;
   border: none;
   cursor: pointer;
+  -webkit-transition: all 0.7s;
   transition: all 0.7s;
 }
 .nav-main-item i {
@@ -134,21 +145,51 @@ header nav > ul > li .submenu {
 }
 header nav .nav-item-container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 65px;
 }
 
 /* Header Nav: Listen */
 header nav .nav-listen {
   background: var(--color-dark-pink);
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+header nav .nav-listen .submenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 /* Header Nav: About */
 header nav .nav-about {
   background: var(--color-dark-blue);
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+header nav .nav-about .submenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 /* Header Nav interactivity */
@@ -161,10 +202,6 @@ header nav .nav-item-container,
 header nav:hover .nav-item-container,
 header nav:focus .nav-item-container {
   height: 200px;
-}
-header nav .nav-item-container:hover .nav-main-item,
-header nav .nav-item-container:focus .nav-main-item {
-  /* align-self: flex-start; */
 }
 header nav .nav-item-container:hover .submenu,
 header nav .nav-item-container:focus .submenu  {
