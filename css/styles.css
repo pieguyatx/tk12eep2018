@@ -66,12 +66,10 @@ header .branding .logo-text .logo-12 {
 header .branding h1:hover .logo-text .logo-k,
 header .branding h1:focus .logo-text .logo-k {
   color: var(--branding-pink);
-  font-weight: bold;
 }
 header .branding h1:hover .logo-text .logo-12,
 header .branding h1:focus .logo-text .logo-12 {
   color: var(--branding-blue);
-  font-weight: bold;
 }
 /* Header Navs */
 header nav {
@@ -194,11 +192,15 @@ header nav .icon-list-container ul li {
   width: 50px;
   border-radius: 5px;
   overflow: hidden;
+  text-align: center;
 }
 header nav .icon-list-container ul li.bg-white {
   background: #fff;
 }
-
+header nav .icon-list-container i.fab {
+  font-size: 1.8em;
+  padding-top: 5px;
+}
 /* Header Nav: Listen */
 header nav .nav-listen {
   background: var(--color-dark-pink);
@@ -236,6 +238,10 @@ header nav .nav-about .submenu {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+header nav .tagline {
+  max-width: 250px;
+  font-style: italic;
 }
 
 /* Header Nav interactivity */
