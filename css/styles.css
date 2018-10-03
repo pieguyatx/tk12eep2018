@@ -358,6 +358,9 @@ footer nav ul {
 footer nav ul li {
   margin: 0 3em;
 }
+footer .footer-social-container a {
+  margin: 0.5em;
+}
 
 /* ===Template-specific styles === */
 
@@ -374,6 +377,13 @@ footer nav ul li {
   header nav:hover .nav-item-container,
   header nav:focus .nav-item-container {
     height: unset;
+    flex-direction: column;
+  }
+  header nav .nav-item-container .submenu {
+    flex-direction: column-reverse;
+  }
+  header nav .nav-item-container:hover .submenu {
+    height: 350px;
   }
   header nav .nav-item-active {
     width: 100%;
@@ -397,6 +407,12 @@ footer nav ul li {
   header nav .nav-item-minimized .nav-main-item-icon i {
     font-size: 1em;
     margin: 0.1em 0.5em;
+  }
+  footer nav ul {
+    flex-direction: column;
+  }
+  footer nav ul li {
+    margin: 0.5em 3em;
   }
 }
 
