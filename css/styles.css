@@ -350,30 +350,66 @@ header nav .nav-item-minimized .nav-main-item-icon i {
   -o-object-position: center;
      object-position: center;
 }
-.episode-img-container .episode-info,
-.episode-primary .episode-info {
+.episode-info-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0);
   color: #fff;
   padding: 1em;
   -webkit-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
-  width: 85%;
+  width: 75%;
+  min-width: 280px;
 }
-.episode-img-container .episode-info h3,
-.episode-primary .episode-info h3 {
+.episode-img-container .episode-info,
+.episode-primary .episode-info {
+  border-radius: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-shadow: #000 0 0 50px;
+}
+.episode-info-container .episode-info::before {
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 20px;
+}
+.episode-primary:hover .episode-info-container .episode-info,
+.episode-primary:hover .episode-info-container .episode-info::before,
+.episode-img-container:hover .episode-info,
+.episode-img-container:hover .episode-info::before {
+  opacity: 1;
+}
+.episode-img-container .episode-info .episode-title,
+.episode-primary .episode-info .episode-title {
   margin: 0;
+  font-weight: normal;
 }
-.episode-img-container .episode-info > div,
-.episode-primary .episode-info > div {
+.episode-img-container .episode-info > .episode-meta,
+.episode-primary .episode-info > .episode-meta {
   margin: 0;
 }
 .episode-primary .episode-info {
   font-size: 3em;
+  max-width: 1000px;
+  padding: 0.5em;
 }
-
+.episode-primary .episode-info .episode-meta {
+  font-size: 0.5em;
+}
+.episode-img-container .episode-info {
+  font-size: 1.5em;
+  max-width: 500px;
+}
 
 
 /* Footer */
