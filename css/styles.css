@@ -304,7 +304,7 @@ header nav .nav-item-minimized .nav-main-item-icon i {
 .episode-container,
 .episode-primary,
 .episode-img-container {
-  padding: 0.5em;
+  padding: 8px;
 }
 .episode-container {
   display: -webkit-box;
@@ -319,6 +319,10 @@ header nav .nav-item-minimized .nav-main-item-icon i {
 }
 .episode-primary, .episodes-other {
   width: 50%;
+}
+.episode-primary .section-title,
+.episodes-other .section-title {
+  display: none;
 }
 .episode-primary iframe {
   height: auto;
@@ -352,15 +356,16 @@ header nav .nav-item-minimized .nav-main-item-icon i {
 }
 .episode-info-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  background: rgba(0,0,0,0);
+  top: 0;
+  left: 0;
   color: #fff;
-  padding: 1em;
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-  width: 75%;
+  padding: 8px;
+  width: 100%;
   min-width: 280px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .episode-img-container .episode-info,
 .episode-primary .episode-info {
@@ -369,9 +374,16 @@ header nav .nav-item-minimized .nav-main-item-icon i {
   opacity: 0;
   transition: opacity 0.3s;
   text-shadow: #000 0 0 50px;
+  position: relative;
+  z-index: 1;
 }
-.episode-info-container .episode-info::before {
+.episode-info-container::before {
   background: rgba(0,0,0,0.8);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+50,000000+100&0.15+0,0.6+25,0.82+50,0.6+75,0.15+100 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.82) 50%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.15) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.6) 25%,rgba(0,0,0,0.82) 50%,rgba(0,0,0,0.6) 75%,rgba(0,0,0,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.6) 25%,rgba(0,0,0,0.82) 50%,rgba(0,0,0,0.6) 75%,rgba(0,0,0,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26000000', endColorstr='#26000000',GradientType=0 ); /* IE6-9 */
   opacity: 0;
   transition: opacity 0.3s;
   content: "";
@@ -380,13 +392,13 @@ header nav .nav-item-minimized .nav-main-item-icon i {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
-  border-radius: 20px;
+  z-index: 0;
+  margin: 8px;
 }
 .episode-primary:hover .episode-info-container .episode-info,
-.episode-primary:hover .episode-info-container .episode-info::before,
-.episode-img-container:hover .episode-info,
-.episode-img-container:hover .episode-info::before {
+.episode-primary:hover .episode-info-container::before,
+.episode-info-container:hover .episode-info,
+.episode-info-container:hover::before {
   opacity: 1;
 }
 .episode-img-container .episode-info .episode-title,

@@ -1,5 +1,6 @@
 window.onload = function() {
   init_navbar(); // initialize navbar hover effects
+  set_iframe_size(); // resize iframe as needed
 };
 
 function init_navbar(){
