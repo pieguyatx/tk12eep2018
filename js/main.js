@@ -1,5 +1,11 @@
 window.onload = function() {
-  init_navbar(); // initialize navbar hover effects
+  // initialize navbar hover effects
+  init_navbar();
+  // resize iframe as needed
+  set_iframe_size()
+  window.onresize = function(){
+    set_iframe_size();
+  }
 };
 
 function init_navbar(){
@@ -24,4 +30,10 @@ function init_navbar(){
     document.getElementById("nav-about").classList.remove("nav-item-active");
     document.getElementById("nav-listen").classList.remove("nav-item-minimized");
   }
+}
+
+function set_iframe_size(){
+  var width = document.getElementById('episode-primary').offsetWidth;
+  var iframe = document.querySelector('.episode-primary iframe');
+  iframe.style.height = width + "px";
 }

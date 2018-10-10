@@ -303,8 +303,10 @@ header nav .nav-item-minimized .nav-main-item-icon i {
 /* Main Content */
 .episode-container,
 .episode-primary,
-.episode-img-container {
-  padding: 0.5em;
+.episode-img-container,
+.latest-episode-link,
+.more-episodes {
+  padding: 5px;
 }
 .episode-container {
   display: -webkit-box;
@@ -320,9 +322,14 @@ header nav .nav-item-minimized .nav-main-item-icon i {
 .episode-primary, .episodes-other {
   width: 50%;
 }
+.episode-primary .section-title,
+.episodes-other .section-title {
+  display: none;
+}
 .episode-primary iframe {
   height: auto;
   min-height: 500px;
+  max-height: 800px;
 }
 .episodes-other > div {
   display: -webkit-box;
@@ -344,36 +351,84 @@ header nav .nav-item-minimized .nav-main-item-icon i {
 }
 .episodes-other > div .episode-img-container img {
   width: 100%;
-  height: 250px;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
+.episode-info-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 5px;
+  width: 100%;
+  min-width: 280px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .episode-img-container .episode-info,
 .episode-primary .episode-info {
+  border-radius: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-shadow: #000 0 0 50px;
+  position: relative;
+  z-index: 1;
+}
+.episode-info-container::before {
+  background: rgba(0,0,0,0.8);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+50,000000+100&0+0,0.6+30,0.82+50,0.6+70,0+100 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.82) 50%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 30%,rgba(0,0,0,0.82) 50%,rgba(0,0,0,0.6) 70%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 30%,rgba(0,0,0,0.82) 50%,rgba(0,0,0,0.6) 70%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  opacity: 0;
+  transition: opacity 0.3s;
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  padding: 1em;
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-  width: 85%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  margin: 5px;
 }
-.episode-img-container .episode-info h3,
-.episode-primary .episode-info h3 {
+.episode-primary:hover .episode-info-container .episode-info,
+.episode-primary:hover .episode-info-container::before,
+.episode-info-container:hover .episode-info,
+.episode-info-container:hover::before {
+  opacity: 1;
+}
+.episode-img-container .episode-info .episode-title,
+.episode-primary .episode-info .episode-title {
+  margin: 0;
+  font-weight: normal;
+  pointer-events: all;
+}
+.episode-img-container .episode-info > .episode-meta,
+.episode-primary .episode-info > .episode-meta {
   margin: 0;
 }
-.episode-img-container .episode-info > div,
-.episode-primary .episode-info > div {
-  margin: 0;
+.episode-primary .episode-info-container {
+    pointer-events: none;
 }
 .episode-primary .episode-info {
   font-size: 3em;
+  max-width: 1000px;
+  padding: 0.5em;
 }
-
+.episode-primary .episode-info .episode-meta {
+  font-size: 0.5em;
+}
+.episode-img-container .episode-info {
+  font-size: 1.5em;
+  max-width: 500px;
+}
 
 
 /* Footer */
