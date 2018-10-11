@@ -225,6 +225,10 @@ header nav .social-list ul li:hover,
 header nav .social-list ul li:focus {
   border: solid 1px var(--branding-pink);
 }
+header nav .icon-list-container ul li img {
+  width: 100%;
+  height: 100%;
+}
 header nav .icon-list-container ul li.bg-white {
   background: #fff;
 }
@@ -635,10 +639,6 @@ footer .footer-social-container a {
   }
   header nav .icon-list-container i.fab {
     font-size: 1.3em;
-  }
-  header nav .icon-list-container ul li img {
-    width: 100%;
-    height: 100%;
   }
   .episode-container {
     -webkit-box-orient: vertical;
