@@ -345,7 +345,8 @@ header nav .nav-item-minimized .nav-main-item-icon i {
   min-height: 180px;
   max-height: 800px;
 }
-.episodes-other > div {
+.episodes-other .episodes-recent,
+.episodes-other .episodes-related {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -454,7 +455,20 @@ header nav .nav-item-minimized .nav-main-item-icon i {
   font-size: 1.5em;
   max-width: 500px;
 }
-
+.latest-episode-link h4,
+.more-episodes h4 {
+  font-weight: normal;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 /* Footer */
 footer {
@@ -474,6 +488,7 @@ footer nav ul {
   width: 100%;
   max-width: 77rem;
   margin: auto;
+  padding: 0;
 }
 footer nav ul li {
   margin: 0 3em;
@@ -570,6 +585,25 @@ footer .footer-social-container a {
   .episode-primary .episode-info {
     font-size: 1.5em;
   }
+  .latest-episode-link {
+    font-size: 3em;
+    text-align: center;
+    padding: 1em;
+    background: rgba(0,0,0,0.8);
+    margin-top: 10px;
+  }
+  .latest-episode-link i {
+    display: block;
+    margin: 0.2em;
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width : 640px) {
+  .latest-episode-link {
+    font-size: 2.5em;
+    padding: 0.5em;
+  }
 }
 
 @media only screen and (max-width : 414px) {
@@ -585,6 +619,23 @@ footer .footer-social-container a {
   }
   .episodes-other > div .episode-img-container {
     width: 100%;
+  }
+  .latest-episode-link {
+      font-size: 1.5em;
+      padding: 0.5em;
+  }
+  .episode-primary .section-title,
+  .episodes-other .section-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+    margin-top: 1.5em;
   }
 }
 
