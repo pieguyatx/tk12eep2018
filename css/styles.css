@@ -171,7 +171,8 @@ header .icon-list-container a {
   margin: 0 0.25em;
 }
 .nav-main-item:hover,
-.nav-main-item:focus {
+.nav-main-item:focus,
+header .link-list-container a:hover {
   text-shadow: var(--color-light-blue) 0px 0px 10px;
 }
 .nav-main-item:active {
@@ -214,6 +215,15 @@ header nav .icon-list-container ul li {
   border-radius: 5px;
   overflow: hidden;
   text-align: center;
+  border: solid 1px transparent;
+}
+header nav .subscribe-list ul li:hover,
+header nav .subscribe-list ul li:focus {
+  border: solid 1px var(--branding-blue);
+}
+header nav .social-list ul li:hover,
+header nav .social-list ul li:focus {
+  border: solid 1px var(--branding-pink);
 }
 header nav .icon-list-container ul li.bg-white {
   background: #fff;
@@ -247,6 +257,10 @@ header .nav-search {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+header .nav-search input {
+  padding: 4px;
+  margin: 4px;
 }
 /* Header Nav: About */
 header nav .nav-about {
@@ -555,6 +569,14 @@ footer .footer-social-container a {
     font-size: 1em;
     margin: 0.1em 0.5em;
   }
+  header nav .icon-list-container ul,
+  header .link-list-container ul {
+    padding: 0;
+  }
+  header .nav-search,
+  header nav .tagline {
+    text-align: center;
+  }
   footer nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -607,6 +629,17 @@ footer .footer-social-container a {
 }
 
 @media only screen and (max-width : 414px) {
+  header nav .icon-list-container ul li {
+    width: 40px;
+    height: 40px;
+  }
+  header nav .icon-list-container i.fab {
+    font-size: 1.3em;
+  }
+  header nav .icon-list-container ul li img {
+    width: 100%;
+    height: 100%;
+  }
   .episode-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
