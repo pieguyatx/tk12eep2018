@@ -2,7 +2,7 @@ import React from 'react';
 
 const EpisodeSearch = () => {
   return (
-    <div>
+    <React.Fragment>
       <div>
         <form className="nav-search">
           <label>Episode Search</label>
@@ -22,7 +22,7 @@ const EpisodeSearch = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

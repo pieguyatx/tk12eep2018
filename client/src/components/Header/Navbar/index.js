@@ -5,6 +5,7 @@ import SubscribeList from '../SubscribeList';
 import AboutButton from '../AboutButton';
 import Tagline from '../Tagline';
 import SocialList from '../SocialList';
+import AboutList from '../AboutList';
 
 const Navbar = () => {
   return (
@@ -21,6 +22,7 @@ const Navbar = () => {
         <div className="submenu">
           <Tagline />
           <SocialList />
+          <AboutList />
         </div>
       </div>
     </nav>

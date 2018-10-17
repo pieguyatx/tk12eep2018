@@ -1,13 +1,14 @@
 import React from 'react';
 import subscriptions from './subscriptions';
-import SubscriptionListItem from '../SubscriptionListItem';
 
 const SubscribeList = () => {
   const subscribeItems = subscriptions.map((item, i) => {
     return (
-      <SubscriptionListItem
-        key={i}
-        service={item} />
+      <li key={i}>
+        <a href={item.link} title={item.title} target="_blank">
+          <img src={item.image} alt={item.alt} />
+        </a>
+      </li>
     );
   });
 

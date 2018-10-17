@@ -13,7 +13,9 @@ const SocialList = () => {
 
   return (
     <div className="social-list icon-list-container">
-      {socialItems}
+      <ul>
+        {socialItems}
+      </ul>
     </div>
   );
 }
