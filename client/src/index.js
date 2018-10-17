@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Header from './components/Header'
 import registerServiceWorker from './registerServiceWorker';
+
+class App extends Component {
+  render() {
+    return (
+      <Header />
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
