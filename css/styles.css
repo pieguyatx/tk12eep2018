@@ -18,7 +18,7 @@ body {
   font-family: 'PT Sans', sans-serif;
   color: black;
   background: white;
-  min-width: 280px;
+  min-width: 310px;
   margin: 0;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -191,6 +191,11 @@ header nav .nav-item-container {
           justify-content: center;
   height: 65px;
 }
+header nav .nav-item-container.nav-item-active {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
 header nav .icon-list-container ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,6 +212,10 @@ header nav .icon-list-container ul {
   max-width: 350px;
   max-height: 350px;
   overflow: hidden;
+}
+header nav .icon-list-container ul,
+header .link-list-container ul {
+  padding: 0;
 }
 header nav .icon-list-container ul li {
   margin: 5px;
@@ -266,6 +275,10 @@ header .nav-search input {
   padding: 4px;
   margin: 4px;
 }
+header .search-widget {
+  padding-left: 40px;
+}
+
 /* Header Nav: About */
 header nav .nav-about {
   background: var(--color-dark-blue);
@@ -286,6 +299,7 @@ header nav .nav-about .submenu {
 header nav .tagline {
   max-width: 250px;
   font-style: italic;
+  text-align: center;
 }
 
 /* Header Nav interactivity */
@@ -573,13 +587,13 @@ footer .footer-social-container a {
     font-size: 1em;
     margin: 0.1em 0.5em;
   }
-  header nav .icon-list-container ul,
-  header .link-list-container ul {
-    padding: 0;
-  }
   header .nav-search,
   header nav .tagline {
     text-align: center;
+  }
+  header .search-widget {
+    width: 100%;
+    padding-left: 0;
   }
   footer nav ul {
     -webkit-box-orient: vertical;
