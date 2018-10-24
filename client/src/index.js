@@ -1,8 +1,32 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from './components/Header/header'
+import NotFound from "./components/NotFound/NotFound";
 import registerServiceWorker from './registerServiceWorker';
+//import Header from "client/src/components/Header";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class ErrorPage extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <NotFound />
+      </div>
+    );
+  }
+}
+
+const Site = () => {
+  return (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Header} />
+      <Route  component={ErrorPage} />
+    </Switch>
+  </Router>
+  );
+}
+
+ReactDOM.render(<Site />, document.getElementById('root'));
 registerServiceWorker();
