@@ -531,6 +531,22 @@ footer .footer-social-container a {
 
 /* ===Template-specific styles === */
 
+/* Template: Episode */
+.page-episode .episode-primary,
+.page-episode .episodes-other {
+  width: 100%;
+}
+.page-episode .episode-container .player-images-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 33%;
+}
+.page-episode .episode-text {
+  width: 67%;
+  padding: 1em 2em;
+}
 
 
 /* Mobile styling */
