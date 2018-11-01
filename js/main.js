@@ -1,6 +1,10 @@
 window.onload = function() {
   // initialize navbar hover effects
   init_navbar();
+
+  // Listen for transcript button click
+  set_transcript_button();
+
   // resize iframe as needed
   set_iframe_size()
   window.onresize = function(){
@@ -36,4 +40,18 @@ function set_iframe_size(){
   var width = document.getElementById('episode-primary').offsetWidth;
   var iframe = document.querySelector('.episode-primary iframe');
   iframe.style.height = width + "px";
+}
+
+function set_transcript_button(){
+  var btn = document.getElementById("transcript-button-click");
+  var transcript = document.getElementById("transcript-container");
+  btn.addEventListener("click",function(){
+    // console.log('button clicked'); // debug
+    transcript.classList.remove("hidden");
+    transcript.classList.add("shown");
+    btn.classList.add("active");
+    btn.setAttribute("title","");
+    btn.style.cursor = "context-menu";
+    btn.tabIndex = "-1";
+  });
 }
