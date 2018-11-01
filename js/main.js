@@ -2,14 +2,21 @@ window.onload = function() {
   // initialize navbar hover effects
   init_navbar();
 
-  // Listen for transcript button click
-  set_transcript_button();
+  var episodePage = document.getElementsByClassName("page-episode");
+  if (episodePage.length>0){
+    // Listen for transcript button click
+    set_transcript_button();
+    // Add button to go back to top
+    window.onscroll = function() {scrollFunction()};
+    console.log("test");
+  }
 
   // resize iframe as needed
   set_iframe_size()
   window.onresize = function(){
     set_iframe_size();
   }
+
 };
 
 function init_navbar(){
@@ -39,7 +46,13 @@ function init_navbar(){
 function set_iframe_size(){
   var width = document.getElementById('episode-primary').offsetWidth;
   var iframe = document.querySelector('.episode-primary iframe');
-  iframe.style.height = width + "px";
+  var episodePage = document.getElementsByClassName("page-episode");
+  if (episodePage.length>0 && screen.width <= 640){
+    iframe.style.height = "300px";
+  }
+  else {
+    iframe.style.height = width + "px";
+  }
 }
 
 function set_transcript_button(){
@@ -54,4 +67,18 @@ function set_transcript_button(){
     btn.style.cursor = "context-menu";
     btn.tabIndex = "-1";
   });
+}
+
+function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("btn-top").style.display = "block";
+    } else {
+        document.getElementById("btn-top").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
