@@ -502,6 +502,17 @@ header nav .nav-item-minimized .nav-main-item-icon i {
           align-items: center;
 }
 
+.metadata-tags .tag {
+  padding: 0 0.5em;
+  border-radius: 0.5em;
+}
+.metadata-tags .tag:nth-child(2n+1) {
+  background: var(--color-light-blue);
+}
+.metadata-tags .tag:nth-child(2n) {
+  background: var(--color-light-pink);
+}
+
 /* Footer */
 footer {
   background: #000;
