@@ -623,6 +623,7 @@ footer .footer-social-container a {
   background: var(--color-dark-pink);
 }
 .page-episode .transcript-container {
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .page-episode .transcript-container.hidden {
@@ -655,7 +656,44 @@ footer .footer-social-container a {
   background-color: var(--color-dark-pink); /* Set a background color */
 }
 
+/* Template: Seasons */
+.page-seasons .controls {
+  margin-bottom: 1em;
+}
+.page-seasons .seasons-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 0px 15px 15px 15px;
+}
+.page-seasons .season-container {
+  width: 33%;
+  padding: 15px;
+}
+.page-seasons .season-container .subheading h2 {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    text-align: center;
+}
+.page-seasons .season-container .playlist-embed iframe {
+  height: 800px;
+}
+
 /* Mobile styling */
+@media only screen and (max-width : 1680px) {
+  .page-seasons .seasons-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .page-seasons .season-container {
+    width: 50%;
+  }
+}
 @media only screen and (min-width : 1000px) {
   header {
     position: -webkit-sticky;
@@ -772,6 +810,9 @@ footer .footer-social-container a {
     margin: 0.2em;
     font-size: 2em;
   }
+  .page-seasons .season-container {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width : 640px) {
@@ -781,7 +822,10 @@ footer .footer-social-container a {
   }
 
   .page-episode .episode-container {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .page-episode .episode-container .player-images-column,
