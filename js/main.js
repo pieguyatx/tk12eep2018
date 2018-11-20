@@ -1,5 +1,8 @@
 // disable button(s) until page fully loaded
-document.getElementById("dropdown-season-order").disabled = true;
+var button1 = document.getElementById("dropdown-season-order");
+if(button1){
+  button1.disabled = true;
+}
 
 // After page is loaded, allow interactivity
 window.onload = function() {
