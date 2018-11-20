@@ -272,11 +272,23 @@
     <div class="main-title">
       <h1>Seasons</h1>
       <div class="controls">
-        Newest season first (dropdown goes here)
+        <div class="input-label">
+          <label for="playlist-order">
+            Order shown:
+          </label>
+        </div>
+        <div class="input-item">
+          <div class="input-dropdown">
+            <select name="playlist-order" id="dropdown-season-order">
+              <option value="oldest" selected>Oldest season shown first</option>
+              <option value="newest">Newest season shown first</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
 
-    <section class="seasons-list">
+    <section class="seasons-list" id="seasons-list">
 
       <article class="season-container playlist-season-1">
         <div class="subheading">
