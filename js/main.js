@@ -104,15 +104,17 @@ function scrollFunction() {
 
   // add classes for sticky sidebar upon scroll for certain screens
   var scrollIndicatorElement = document.querySelector(".episode-container");
-  if (document.body.scrollTop > 1450 || document.documentElement.scrollTop > 1450) {
+  var threshold1 = 1750;
+  var threshold2 = threshold1 + 150;
+  if (document.body.scrollTop > threshold1 || document.documentElement.scrollTop > threshold1) {
     scrollIndicatorElement.classList.add("scrolled-far-down");
     var pos = window.pageYOffset || document.documentElement.scrollTop;
-    if (lastScrollPos < 1600 && pos >= 1600){
+    if (lastScrollPos < threshold2 && pos >= threshold2){
       // scrolling down
       scrollIndicatorElement.classList.remove("scrolled-hide");
       scrollIndicatorElement.classList.add("scrolled-show");
     }
-    else if (lastScrollPos >= 1600 && pos <= 1600){
+    else if (lastScrollPos >= threshold2 && pos <= threshold2){
       // scrolling up
       scrollIndicatorElement.classList.remove("scrolled-show");
       scrollIndicatorElement.classList.add("scrolled-hide");
