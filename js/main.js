@@ -4,6 +4,9 @@ if(button1){
   button1.disabled = true;
 }
 
+// Initilize scroll detection
+var lastScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
 // After page is loaded, allow interactivity
 window.onload = function() {
   // initialize navbar hover effects
@@ -76,6 +79,7 @@ function set_iframe_size(){
 function set_transcript_button(){
   var btn = document.getElementById("transcript-button-click");
   var transcript = document.getElementById("transcript-container");
+  var episode = document.querySelector(".episode-container");
   btn.addEventListener("click",function(){
     // console.log('button clicked'); // debug
     transcript.classList.remove("hidden");
@@ -84,21 +88,81 @@ function set_transcript_button(){
     btn.setAttribute("title","");
     btn.style.cursor = "context-menu";
     btn.tabIndex = "-1";
+    episode.classList.add("transcript-shown");
   });
 }
 
+// On episode page, trigger events on scroll
 function scrollFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        document.getElementById("btn-top").style.display = "block";
-    } else {
-        document.getElementById("btn-top").style.display = "none";
+
+  // show back-to-top button
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    document.getElementById("btn-top").style.display = "block";
+  } else {
+    document.getElementById("btn-top").style.display = "none";
+  }
+
+  // add classes for sticky sidebar upon scroll for certain screens
+  var scrollIndicatorElement = document.querySelector(".episode-container");
+  if (document.body.scrollTop > 1450 || document.documentElement.scrollTop > 1450) {
+    scrollIndicatorElement.classList.add("scrolled-far-down");
+    var pos = window.pageYOffset || document.documentElement.scrollTop;
+    if (lastScrollPos < 1600 && pos >= 1600){
+      // scrolling down
+      scrollIndicatorElement.classList.remove("scrolled-hide");
+      scrollIndicatorElement.classList.add("scrolled-show");
     }
+    else if (lastScrollPos >= 1600 && pos <= 1600){
+      // scrolling up
+      scrollIndicatorElement.classList.remove("scrolled-show");
+      scrollIndicatorElement.classList.add("scrolled-hide");
+    }
+    // update scroll position
+    lastScrollPos = pos <= 0 ? 0 : pos; // For Mobile or negative scrolling;
+    // detect if close to the bottom footer
+    // var distance = scrollBottom();
+    var player = document.querySelector(".episode-player-container");
+    var distance = getDistanceFromBottom(player);
+     console.log(distance); // debug
+    if (distance < 100){
+      scrollIndicatorElement.classList.add("scrolled-near-bottom");
+    } else {
+      scrollIndicatorElement.classList.remove("scrolled-near-bottom");
+    }
+  }
+  else {
+    scrollIndicatorElement.classList.remove("scrolled-far-down");
+    scrollIndicatorElement.classList.remove("scrolled-hide");
+    scrollIndicatorElement.classList.remove("scrolled-show");
+  }
+
+}
+
+// Find distance between bottom of player and bottom of document
+function getDistanceFromBottom(element){
+  var distance = Math.max( scrollBottom() + window.innerHeight - element.offsetTop - element.offsetHeight, 0 );
+  return distance;
+}
+
+// Find distance from bottom of document
+function scrollBottom(){
+  var distance = Math.max(getDocumentHeight() - window.innerHeight - window.pageYOffset, 0);
+  return distance;
+}
+
+// Get document height
+function getDocumentHeight(){
+  var body = document.body,
+    html = document.documentElement;
+  var height = Math.max( body.scrollHeight, body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight );
+  return height;
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 // On season order selection, set appropriate class
