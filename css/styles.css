@@ -699,8 +699,8 @@ footer .footer-social-container a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0px 15px 15px 15px;
 }
 .page-seasons .seasons-list.newest-first {
@@ -712,12 +712,12 @@ footer .footer-social-container a {
       flex-wrap: wrap-reverse;
 }
 .page-seasons .season-container,
-.page-playlists .season-container {
+.page-playlists .playlist-container {
   width: 33%;
   padding: 15px;
 }
 .page-seasons .season-container .subheading h2,
-.page-playlists .season-container .subheading h2 {
+.page-playlists .playlist-container .subheading h2 {
     margin-top: 0;
     margin-bottom: 0.25em;
     text-align: center;
@@ -726,7 +726,7 @@ footer .footer-social-container a {
   height: 800px;
 }
 .page-playlists .playlist-container .playlist-embed iframe {
-  height: 500px;
+  height: 400px;
 }
 
 /* Template: Latest Episodes */
@@ -739,11 +739,13 @@ footer .footer-social-container a {
 
 /* Mobile styling */
 @media only screen and (max-width : 1680px) {
-  .page-seasons .seasons-list {
+  .page-seasons .seasons-list,
+  .page-playlists .playlists-list {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .page-seasons .season-container {
+  .page-seasons .season-container,
+  .page-playlists .playlist-container {
     width: 50%;
   }
 }
@@ -874,7 +876,8 @@ footer .footer-social-container a {
     margin: 0.2em;
     font-size: 2em;
   }
-  .page-seasons .season-container {
+  .page-seasons .season-container,
+  .page-playlists .playlist-container {
     width: 100%;
   }
   .page-seasons .seasons-list.newest-first {
