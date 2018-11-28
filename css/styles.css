@@ -659,8 +659,9 @@ footer .footer-social-container a {
   background-color: var(--color-dark-pink); /* Set a background color */
 }
 
-/* Template: Seasons */
-.page-seasons .controls {
+/* Template: Seasons, Playlists */
+.page-seasons .controls,
+.archive .controls {
   margin-bottom: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -674,19 +675,24 @@ footer .footer-social-container a {
   margin-top: -30px;
 }
 .page-seasons .controls .input-label,
-.page-seasons .controls .input-item {
+.page-seasons .controls .input-item,
+.archive .controls .input-label,
+.archive .controls .input-item {
   margin: 0 5px 0 5px;
 }
-.page-seasons .controls .input-label {
+.page-seasons .controls .input-label,
+.archive .controls .input-label {
   font-size: 0.8em;
   display: none;
 }
-.page-seasons .controls select {
+.page-seasons .controls select,
+.archive .controls select {
   font-family: 'PT Sans', sans-serif;
   font-size: 1em;
   cursor: pointer;
 }
-.page-seasons .seasons-list {
+.page-seasons .seasons-list,
+.page-playlists .playlists-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -705,17 +711,22 @@ footer .footer-social-container a {
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse;
 }
-.page-seasons .season-container {
+.page-seasons .season-container,
+.page-playlists .season-container {
   width: 33%;
   padding: 15px;
 }
-.page-seasons .season-container .subheading h2 {
+.page-seasons .season-container .subheading h2,
+.page-playlists .season-container .subheading h2 {
     margin-top: 0;
     margin-bottom: 0.25em;
     text-align: center;
 }
 .page-seasons .season-container .playlist-embed iframe {
   height: 800px;
+}
+.page-playlists .playlist-container .playlist-embed iframe {
+  height: 500px;
 }
 
 /* Template: Latest Episodes */
