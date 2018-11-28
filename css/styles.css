@@ -718,6 +718,14 @@ footer .footer-social-container a {
   height: 800px;
 }
 
+/* Template: Latest Episodes */
+.page-latest .episodes-other {
+  width: 100%;
+}
+.page-latest .episodes-other > div .episode-img-container {
+  width: 25%;
+}
+
 /* Mobile styling */
 @media only screen and (max-width : 1680px) {
   .page-seasons .seasons-list {
@@ -817,6 +825,11 @@ footer .footer-social-container a {
   .page-episode .episode-container.transcript-shown.scrolled-far-down .player-images-column {
     top: 5px;
   }
+
+  .page-latest .episodes-other > div .episode-img-container {
+    width: 33.3%;
+  }
+  
 }
 
 @media only screen and (max-width : 768px) {
@@ -930,6 +943,10 @@ footer .footer-social-container a {
   .page-episode .episode-text {
     margin: 2em auto 2em auto;
   }
+  .page-latest .episodes-other > div .episode-img-container {
+    width: 50%;
+  }
+
 }
 
 @media only screen and (max-width : 414px) {
@@ -970,6 +987,10 @@ footer .footer-social-container a {
     text-align: center;
     margin-top: 1.5em;
   }
+  .page-latest .episodes-other > div .episode-img-container {
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width : 321px) {
