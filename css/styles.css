@@ -349,7 +349,9 @@ header nav .nav-item-minimized .nav-main-item-icon i {
 .episode-primary,
 .episode-img-container,
 .latest-episode-link,
-.more-episodes {
+.more-episodes,
+.archive-container,
+.article-container {
   padding: 5px;
 }
 .episode-container {
@@ -737,6 +739,27 @@ footer .footer-social-container a {
   width: 25%;
 }
 
+/* Template: Article page */
+.article .article-content {
+  position: relative;
+}
+.article .rich-text {
+  width: 67%;
+  padding: 0 2em 1em 2em;
+  margin-top: 0;
+  margin-left: auto;
+}
+.article .rich-text .img-in-text {
+  width: 33%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+.article .rich-text .img-in-text img {
+  width: 100%;
+  padding: 5px;
+}
+
 /* Mobile styling */
 @media only screen and (max-width : 1680px) {
   .page-seasons .seasons-list,
@@ -1004,7 +1027,16 @@ footer .footer-social-container a {
   .page-latest .episodes-other > div .episode-img-container {
     width: 100%;
   }
-
+  .article .rich-text {
+    width: 100%;
+    margin-left: unset;
+  }
+  .article .rich-text .img-in-text {
+    width: 100%;
+    position: relative;
+    left: unset;
+    margin-bottom: 1em;
+  }
 }
 
 @media only screen and (max-width : 321px) {
