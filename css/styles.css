@@ -740,6 +740,10 @@ footer .footer-social-container a {
 }
 
 /* Template: Article page */
+.article .article-container {
+  min-height: calc( 100vh - 164px); 
+  overflow: hidden;
+}
 .article .article-content {
   position: relative;
 }
