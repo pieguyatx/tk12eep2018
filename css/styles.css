@@ -532,6 +532,7 @@ footer {
   padding: 0.5em;
   position: relative;
   z-index: 1;
+  margin-top: 5px;
 }
 footer nav ul {
   list-style-type: none;
@@ -796,7 +797,6 @@ footer .footer-social-container a {
     opacity: 0;
   }
   .article .rich-text .img-in-text img {
-    max-height: 300px;
     -o-object-fit: cover;
        object-fit: cover;
     -o-object-position: center;
