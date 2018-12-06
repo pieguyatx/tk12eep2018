@@ -657,6 +657,10 @@ footer .footer-social-container a {
   opacity: 1;
   height: unset;
 }
+.page-episode .social-share-container-horizontal {
+  margin-bottom: 25px;
+  justify-content: flex-start;
+}
 #btn-top {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
