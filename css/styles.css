@@ -580,10 +580,35 @@ footer .footer-social-container a {
   margin: 1em;
   text-transform: uppercase;
   line-height: 0.9em;
+  word-break: break-word;
 }
 .nonhome .title-metadata {
   font-style: italic;
 }
+ul.breadcrumb {
+  padding: 5px 10px 0 10px;
+  list-style: none;
+  margin: 0;
+  margin-bottom: -25px;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 14px;
+}
+ul.breadcrumb li+li:before {
+  padding: 0 8px 0 5px;
+  color: rgb(175, 160, 160);
+  content: ">";
+}
+ul.breadcrumb li a {
+  /* color: #0275d8; */
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  /* color: #01447e; */
+  text-decoration: underline;
+}
+
 
 /* Template: Episode */
 .page-episode .episode-primary,
