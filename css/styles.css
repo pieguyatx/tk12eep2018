@@ -532,7 +532,7 @@ footer {
   padding: 0.5em;
   position: relative;
   z-index: 1;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 footer nav ul {
   list-style-type: none;
@@ -552,6 +552,14 @@ footer nav ul li {
 }
 footer .footer-social-container a {
   margin: 0.5em;
+}
+
+.social-share-container-horizontal {
+  display: flex;
+  justify-content: center;
+}
+.social-share-container-horizontal .social-share-btn {
+  margin: 5px;
 }
 
 /* ===Template-specific styles === */
@@ -771,6 +779,13 @@ footer .footer-social-container a {
 .article .rich-text .img-in-text img {
   width: 100%;
   padding: 5px;
+}
+.article .rich-text .center-in-text {
+  text-align: center;
+}
+.article .rich-text .widget-patreon {
+  margin: auto;
+  max-width: 175px;
 }
 
 /* Mobile styling */
