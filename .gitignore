@@ -5,7 +5,4 @@ web.config
 img/episodes/
 img/episodes/*
 
-*.png
-*.svg
-
 .htaccess
