@@ -682,7 +682,8 @@ ul.breadcrumb li a:hover {
   opacity: 1;
   height: unset;
 }
-.page-episode .social-share-container-horizontal {
+.page-episode .social-share-container-horizontal,
+.news-entry .social-share-container-horizontal {
   margin-bottom: 25px;
   justify-content: flex-start;
 }
