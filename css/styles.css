@@ -830,6 +830,14 @@ ul.breadcrumb li a:hover {
     width: 50%;
   }
 }
+@media only screen and (min-width : 1660px) {
+  .article .rich-text {
+    width: 75%;
+  }
+  .article .rich-text .img-in-text {
+    width: 25%;
+  }
+}
 @media only screen and (min-width : 1000px) {
   header {
     position: -webkit-sticky;
