@@ -310,14 +310,17 @@ header nav .nav-item-container,
   -webkit-transition: all 0.7s;
   transition: all 0.7s;
 }
+
 header nav:hover .nav-item-container,
-header nav:focus .nav-item-container {
+header nav .nav-item-container:hover,
+header nav .nav-item-container:focus,
+header nav .nav-item-container:focus-within {
   height: 200px;
 }
 header nav .nav-item-container:hover .submenu,
 header nav .nav-item-container:focus .submenu  {
   opacity: 1;
-  height: 150px;
+  height: unset;
   width: auto;
   -webkit-transform: unset;
           transform: unset;
@@ -869,7 +872,10 @@ ul.breadcrumb li a:hover {
     width: 100%;
   }
   header nav:hover .nav-item-container,
-  header nav:focus .nav-item-container {
+  header nav:focus-within .nav-item-container, 
+  header nav .nav-item-container:hover,
+  header nav .nav-item-container:focus,
+  header nav .nav-item-container:focus-within {
     height: unset;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

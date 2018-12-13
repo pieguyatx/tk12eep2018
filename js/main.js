@@ -41,10 +41,16 @@ window.onload = function() {
 };
 
 function init_navbar(){
+
   document.getElementById("nav-listen").addEventListener("mouseenter", navListenActive);
   document.getElementById("nav-listen").addEventListener("mouseleave", navListenInactive);
+  document.getElementById("nav-listen").addEventListener("focus", navListenActive);
+  document.getElementById("nav-listen").addEventListener("focusout", navListenInactive);
+
   document.getElementById("nav-about").addEventListener("mouseenter", navAboutActive);
   document.getElementById("nav-about").addEventListener("mouseleave", navAboutInactive);
+  document.getElementById("nav-about").addEventListener("focus", navAboutActive);
+  document.getElementById("nav-about").addEventListener("focusout", navAboutInactive);
 
   function navListenActive(){
     document.getElementById("nav-listen").classList.add("nav-item-active");
