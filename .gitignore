@@ -6,3 +6,5 @@ img/episodes/
 img/episodes/*
 
 .htaccess
+
+config.*
