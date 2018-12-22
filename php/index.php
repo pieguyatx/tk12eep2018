@@ -11,17 +11,17 @@ $password = DB_PASS;
 
 echo "<div>";
 
-try {
-    $conn = new PDO("mysql:host=$host_name;dbname=$database", $user_name, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT episode_id, season_id, episode_id_season FROM episodes"); 
-    $stmt->execute();
-echo $stmt;
+$pdo = new PDO("mysql:host=$host_name;dbname=$database", $user_name, $password);
+// $sql = "SELECT episode_id, season_id, episode_id_season, title, description_short, description_long, date_updated, date_transcribed, date_released FROM episodes WHERE episode_id = 2";
+$sql = "SELECT episode_id, season_id, episode_id_season, title, description_short, description_long, date_updated, date_transcribed, date_released FROM episodes";
+// $sql = "SELECT * FROM episodes";
+echo $sql . "<br/>";
+
+$row = $pdo->query($sql);
+
+foreach ($pdo->query($sql) as $row) {
+  echo "<strong>Episode ID</strong>: " . $row['episode_id'] . "<br/>" . "<strong>Season</strong>: " . $row['season_id'] . "<br/>" . "<strong>Episode</strong>: " . $row['episode_id_season'] . "<br/>" . "<strong>Title</strong>: " . $row['title'] . "<br/>" . "<strong>Short description</strong>: " . $row['description_short'] . "<br/>" . "<strong>Long description</strong>: " . "<br/>" . $row['description_long'] . "<br/>" . "Date updated: " . $row['date_updated'] . "<br/>" . "Date transcribed: " . $row['date_transcribed'] . "<br/>" . "Date released: " . $row['date_released'] . "<br/><br/>";
 }
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
-$conn = null;
 
 echo "</div>";
 
