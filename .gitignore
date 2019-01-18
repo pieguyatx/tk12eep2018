@@ -2,9 +2,10 @@
 
 web.config
 
-img/episodes/
-img/episodes/*
+design/img/episodes/
+design/img/episodes/*
 
 .htaccess
 
 config.*
+*.env
