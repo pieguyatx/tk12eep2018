@@ -3,7 +3,7 @@
 @section('title','Home: Laravel Testing')
 
 @section('content')
-    <h1>
+    <!-- <h1>
         This page should display Episode data from the database.
     </h1>
     <p>
@@ -31,6 +31,6 @@
         @foreach($guests as $guest)
             <li>{{$guest->firstname}}</li>
         @endforeach
-    </ul>
+    </ul> -->
 
 @endsection
