@@ -14,8 +14,8 @@
             {!! $latest_episode_embed !!}
             <div class="episode-info-container">
             <div class="episode-info">
-                <h3 class="episode-title"><a href="episode.html">Latest Episode Title</a></h3>
-                <div class="episode-meta">Season 3 &middot; Episode 17</div>
+            <h3 class="episode-title"><a href="episode.html">{{ $episodes[0]->title }}</a></h3>
+                <div class="episode-meta">Season {{ $episodes[0]->season_id }} &middot; Episode {{ $episodes[0]->episode_id_season }}</div>
             </div>
             </div>
         </div>
@@ -28,45 +28,35 @@
         <h2 class="section-title">Also check out these other episodes:</h2>
 
         <div class="episodes-recent">
-            <div class="episode-img-container">
-            <img src="/img/episodes/ep0_800x800.jpg" alt="Episode cover art">
-            <div class="episode-info-container">
-                <div class="episode-info">
-                <h3 class="episode-title"><a href="episode.html">Recent Episode Title</a></h3>
-                <div class="episode-meta">Season 3 &middot; Episode 16</div>
-                </div>
-            </div>
-            </div>
-            <div class="episode-img-container">
-            <img src="/img/episodes/ep016_800x800.jpg" alt="Episode cover art">
-            <div class="episode-info-container">
-                <div class="episode-info">
-                <h3 class="episode-title"><a href="episode.html">Recent Episode Title</a></h3>
-                <div class="episode-meta">Season 3 &middot; Episode 15</div>
-                </div>
-            </div>
-            </div>
+
+            @for ($ep = 1; $ep <= 2; $ep++)
+                <div class="episode-img-container">
+                    <img src="/img/episodes/ep{{ $episodes[$ep]->episode_id }}_800x800.jpg" alt="Episode cover art" onerror="this.onerror=null;this.src='{{ $image_default }}'">
+                    <div class="episode-info-container">
+                        <div class="episode-info">
+                        <h3 class="episode-title"><a href="episode.html">{{ $episodes[$ep]->title }}</a></h3>
+                        <div class="episode-meta">Season {{ $episodes[$ep]->season_id }} &middot; Episode {{ $episodes[$ep]->episode_id_season }}</div>
+                        </div>
+                    </div>
+                </div>        
+            @endfor
+            
         </div>
 
         <div class="episodes-related">
-            <div class="episode-img-container">
-            <img src="/img/episodes/ep023_800x800.jpg" alt="Episode cover art">
-            <div class="episode-info-container">
-                <div class="episode-info">
-                <h3 class="episode-title"><a href="episode.html">Related Episode Title</a></h3>
-                <div class="episode-meta">Season 1 &middot; Episode 2</div>
-                </div>
-            </div>
-            </div>
-            <div class="episode-img-container">
-            <img src="/img/episodes/ep068_800x800.jpg" alt="Episode cover art">
-            <div class="episode-info-container">
-                <div class="episode-info">
-                <h3 class="episode-title"><a href="episode.html">Related Episode Title</a></h3>
-                <div class="episode-meta">Season 2 &middot; Episode 11</div>
-                </div>
-            </div>
-            </div>
+
+            @for ($ep = 3; $ep <= 4; $ep++)
+                <div class="episode-img-container">
+                    <img src="/img/episodes/ep{{ $episodes[$ep]->episode_id }}_800x800.jpg" alt="Episode cover art" onerror="this.onerror=null;this.src='{{ $image_default }}'">
+                    <div class="episode-info-container">
+                        <div class="episode-info">
+                        <h3 class="episode-title"><a href="episode.html">{{ $episodes[$ep]->title }}</a></h3>
+                        <div class="episode-meta">Season {{ $episodes[$ep]->season_id }} &middot; Episode {{ $episodes[$ep]->episode_id_season }}</div>
+                        </div>
+                    </div>
+                </div>        
+            @endfor
+
         </div>
 
         <div class="more-episodes">

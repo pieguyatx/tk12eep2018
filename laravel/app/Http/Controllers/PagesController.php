@@ -14,7 +14,8 @@ class PagesController extends Controller
         $description = 'Listen to conversations and stories about how to bring engineering to younger ages.  A podcast for educators, engineers, entrepreneurs, parents, and everyone else.';
         $keywords = 'engineering, education, k12, k-12, podcast, STEM, STEAM, conversation, communication, secondary education, primary education, elementary education, science, technology, NGSS, design, teaching, teachers, educators';
         $url = 'http://www.k12engineering.net';
-        $fb_image = 'http://www.k12engineering.net/img/episodes/ep0_800x800.jpg';
+        $image_default = '/img/episodes/ep0_800x800.jpg';
+        $fb_image = 'http://www.k12engineering.net/img/episodes/ep0_800x800.jpg'; // Full URL needed
         $fb_description = $description;
         $twitter_description = 'Stories and conversations about how to bring engineering to younger ages. #K12Engineering';
         $twitter_image = $fb_image;
@@ -29,7 +30,7 @@ class PagesController extends Controller
 
 
         // Return view
-        return view('home', compact('title','description','keywords','fb_image','url', 'fb_image','fb_description','twitter_description','twitter_image','twitter_image_alt','episodes','latest_episode_embed')); // shortened code
+        return view('home', compact('title','description','keywords','fb_image','url', 'image_default','fb_image','fb_description','twitter_description','twitter_image','twitter_image_alt','episodes','latest_episode_embed')); // shortened code
         // return view('home', [
         //     'title' => $title,
         //     'description' => $description,

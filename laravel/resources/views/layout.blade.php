@@ -1,17 +1,4 @@
-<? 
-// Default data values if data missing
-$title = 'The K12 Engineering Education Podcast, by Pios Labs';
-$description = 'Listen to conversations and stories about how to bring engineering to younger ages.  A podcast for educators, engineers, entrepreneurs, parents, and everyone else.';
-$keywords = 'engineering, education, k12, k-12, podcast, STEM, STEAM, conversation, communication, secondary education, primary education, elementary education, science, technology, NGSS, design, teaching, teachers, educators';
-$url = 'http://www.k12engineering.net';
-$fb_image = 'http://www.k12engineering.net/img/episodes/ep0_800x800.jpg';
-$fb_description = $description;
-$fb_appid = '1093531260695171';
-$twitter_description = 'Stories and conversations about how to bring engineering to younger ages. #K12Engineering';
-$twitter_iamge = $fb_image;
-$twitter_image_alt = 'K12 Engineering Education Podcast logo';
-
-?><!doctype html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
 
@@ -36,7 +23,7 @@ $twitter_image_alt = 'K12 Engineering Education Podcast logo';
         <meta property="og:url" content="{{ $url }}"/>
         <meta property="og:description" content="{{ $fb_description }}"/>
         <meta property="og:type" content="website"/>
-        <meta property="fb:app_id" content="{{ $fb_appid }}"/>
+        <meta property="fb:app_id" content="1093531260695171"/>
         <meta name="twitter:card" content="summary"/>
         <meta name="twitter:site" content="@K12Engineering"/>
         <meta name="twitter:title" content="{{ $title }}" />
