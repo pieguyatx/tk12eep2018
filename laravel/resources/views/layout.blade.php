@@ -1,4 +1,17 @@
-<!doctype html>
+<? 
+// Default data values if data missing
+$title = 'The K12 Engineering Education Podcast, by Pios Labs';
+$description = 'Listen to conversations and stories about how to bring engineering to younger ages.  A podcast for educators, engineers, entrepreneurs, parents, and everyone else.';
+$keywords = 'engineering, education, k12, k-12, podcast, STEM, STEAM, conversation, communication, secondary education, primary education, elementary education, science, technology, NGSS, design, teaching, teachers, educators';
+$url = 'http://www.k12engineering.net';
+$fb_image = 'http://www.k12engineering.net/img/episodes/ep0_800x800.jpg';
+$fb_description = $description;
+$fb_appid = '1093531260695171';
+$twitter_description = 'Stories and conversations about how to bring engineering to younger ages. #K12Engineering';
+$twitter_iamge = $fb_image;
+$twitter_image_alt = 'K12 Engineering Education Podcast logo';
+
+?><!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
 
@@ -12,24 +25,24 @@
 
         <meta lang="en" charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>@yield('title','The K12 Engineering Education Podcast, by Pios Labs')</title>
+        <title>{{ $title }}</title>
 
         <!-- SEO -->
-        <meta name="description" content="Listen to conversations and stories about how to bring engineering to younger ages.  For educators, engineers, entrepreneurs, parents, and everyone else.">
-        <meta name="keywords" content="engineering, education, k12, k-12, podcast, STEM, STEAM, conversation, communication, secondary education, primary education, elementary education, science, technology, NGSS, design, teaching, teachers, educators">
-        <meta property="og:site_name" content="The K12 Engineering Education Podcast"/>
-        <meta property="og:title" content="The K12 Engineering Education Podcast"/>
-        <meta property="og:image" content="http://www.k12engineering.net/img/episodes/ep0_800x800.jpg"/>
-        <meta property="og:url" content="http://www.k12engineering.net"/>
-        <meta property="og:description" content="Listen to conversations and stories about how to bring engineering to younger ages, on iTunes, Soundcloud, Google Play, and more. For educators, engineers, entrepreneurs, makers, parents, students, and podcast fans."/>
+        <meta name="description" content="{{ $description }}">
+        <meta name="keywords" content="{{ $keywords }}">
+        <meta property="og:site_name" content="{{ $title }}"/>
+        <meta property="og:title" content="{{ $title }}"/>
+        <meta property="og:image" content="{{ $fb_image }}"/>
+        <meta property="og:url" content="{{ $url }}"/>
+        <meta property="og:description" content="{{ $fb_description }}"/>
         <meta property="og:type" content="website"/>
-        <meta property="fb:app_id" content="1093531260695171"/>
+        <meta property="fb:app_id" content="{{ $fb_appid }}"/>
         <meta name="twitter:card" content="summary"/>
         <meta name="twitter:site" content="@K12Engineering"/>
-        <meta name="twitter:title" content="The K12 Engineering Education Podcast" />
-        <meta name="twitter:description" content="Stories and conversations about how to bring engineering to younger ages. #K12Engineering" />
-        <meta property="og:image" content="http://www.k12engineering.net/img/episodes/ep0_800x800.jpg"/>
-        <meta name="twitter:image:alt" content="K12 Engineering Education Podcast logo" />
+        <meta name="twitter:title" content="{{ $title }}" />
+        <meta name="twitter:description" content="{{ $twitter_description }}" />
+        <meta property="og:image" content="{{ $twitter_image }}"/>
+        <meta name="twitter:image:alt" content="{{ $twitter_image_alt }}" />
 
         <!-- favicons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
