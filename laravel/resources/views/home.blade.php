@@ -11,7 +11,7 @@
         <section class="episode-primary" id="episode-primary">
         <h2 class="section-title">Latest Episode</h2>
         <div class="episode-player-container">
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/497674491&color=%23ff3399&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+            {!! $latest_episode_embed !!}
             <div class="episode-info-container">
             <div class="episode-info">
                 <h3 class="episode-title"><a href="episode.html">Latest Episode Title</a></h3>
