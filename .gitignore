@@ -4,6 +4,8 @@ web.config
 
 design/img/episodes/
 design/img/episodes/*
+img/episodes/
+img/episodes/*
 laravel/public/img/episodes/
 laravel/public/img/episodes/*
 
